@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "slide-scribe"
+version = "0.1.0"
+description = "Extract slides, transcripts, OCR text, and NotebookLM-friendly PDFs from presentation videos."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "slide-scribe contributors" }
+]
+dependencies = [
+  "typer>=0.12",
+  "rich>=13.0",
+  "opencv-python>=4.8",
+  "scikit-image>=0.22",
+  "Pillow>=10.0",
+  "imagehash>=4.3",
+  "faster-whisper>=1.0",
+  "pymupdf>=1.24",
+]
+
+[project.optional-dependencies]
+mlx = [
+  "mlx-whisper>=0.4",
+]
+ocr = [
+  "paddlepaddle>=3.0",
+  "paddleocr>=3.0",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "mypy>=1.10",
+]
+
+[project.scripts]
+slide-scribe = "slide_scribe.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/slide_scribe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

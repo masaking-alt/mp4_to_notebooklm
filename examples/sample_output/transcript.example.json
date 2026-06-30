@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "source_video": "input/presentation.mp4",
+    "duration": 42.0,
+    "fps": 30.0,
+    "frame_count": 1260,
+    "created_at": "2026-06-30T12:00:00+09:00",
+    "transcription": {
+      "engine": "faster-whisper",
+      "model": "large-v3",
+      "language": "ja",
+      "device": "cpu",
+      "compute_type": "int8"
+    },
+    "ocr": {
+      "enabled": false,
+      "engine": null
+    },
+    "slide_detection": {
+      "method": "ssim+phash",
+      "sample_fps": 2.0,
+      "ssim_threshold": 0.82,
+      "min_gap_sec": 1.0,
+      "capture_delay_sec": 0.5,
+      "phash_threshold": 6
+    }
+  },
+  "slides": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 42.0,
+      "image_filename": "presentation_001.png",
+      "image_path": "slides/presentation_001.png",
+      "transcript": "ここでは研究背景を説明します。",
+      "ocr": "",
+      "transcript_segments": [
+        {
+          "start": 0.2,
+          "end": 7.6,
+          "text": "ここでは研究背景を説明します。"
+        }
+      ],
+      "detection_score": null
+    }
+  ]
+}

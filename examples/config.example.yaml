@@ -1,0 +1,12 @@
+output: output
+transcriber: faster-whisper
+model: large-v3
+language: ja
+sample_fps: 2
+ssim_threshold: 0.82
+min_gap_sec: 1.0
+capture_delay_sec: 0.5
+enable_ocr: false
+export_md: true
+device: cpu
+compute_type: int8
